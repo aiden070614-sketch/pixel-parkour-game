@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pixel Parkour - 도트 파쿠르 게임</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            font-family: Arial, sans-serif;
+        }
+        
+        #gameContainer {
+            position: relative;
+            background: #1a1a2e;
+            border: 3px solid #0f3460;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+        }
+        
+        canvas {
+            display: block;
+            background: linear-gradient(to bottom, #87ceeb 0%, #e0f6ff 100%);
+        }
+        
+        #ui {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            color: white;
+            font-size: 16px;
+            font-weight: bold;
+            z-index: 10;
+        }
+        
+        .stat {
+            margin: 5px 0;
+            background: rgba(0, 0, 0, 0.5);
+            padding: 5px 10px;
+            border-radius: 3px;
+        }
+        
+        #controls {
+            position: absolute;
+            bottom: 10px;
+            left: 10px;
+            color: white;
+            font-size: 12px;
+            background: rgba(0, 0, 0, 0.7);
+            padding: 10px;
+            border-radius: 5px;
+            z-index: 10;
+        }
+    </style>
+</head>
+<body>
+    <div id="gameContainer">
+        <canvas id="gameCanvas" width="1024" height="576"></canvas>
+        <div id="ui">
+            <div class="stat">속도: <span id="speedDisplay">0</span></div>
+            <div class="stat">높이: <span id="heightDisplay">0</span></div>
+            <div class="stat">콤보: <span id="comboDisplay">0</span></div>
+        </div>
+        <div id="controls">
+            <div>← → : 이동</div>
+            <div>SPACE : 점프 / 더블점프</div>
+            <div>SHIFT : 대시 (공중 이동)</div>
+        </div>
+    </div>
+
+    <script src="game.js"></script>
+</body>
+</html>
